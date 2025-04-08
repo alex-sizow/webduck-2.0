@@ -7,6 +7,16 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'
   ],
-
+  experimental: {
+    viewTransition: true
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'ru', name: 'Russian', file: 'ru.json' },
+      { code: 'fr', name: 'Fracne', file: 'fr.json' }
+    ]
+  },
   modules: ['@pinia/nuxt', '@nuxtjs/i18n']
 })

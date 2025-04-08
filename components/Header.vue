@@ -9,6 +9,10 @@
       <NuxtLink to="/articles">Articles</NuxtLink>
       <NuxtLink to="/pomodoro">🍅</NuxtLink>
     </nav>
+
+    <ul>
+      <LanguageSwitcherButton />
+    </ul>
   </header>
 </template>
 
