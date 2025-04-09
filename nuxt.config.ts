@@ -11,7 +11,16 @@ export default defineNuxtConfig({
     viewTransition: true
   },
   i18n: {
+    lazy: true,
     defaultLocale: 'en',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_locale',
+      redirectOn: 'root',
+      alwaysRedirect: true,
+      fallbackLocale: 'en'
+    },
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'ru', name: 'Russian', file: 'ru.json' },
