@@ -1,2 +1,19 @@
 @import url("reset.css");
 @import url("variables.css");
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+a {
+  color: var(--color-secondary);
+}
+
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border: 1px solid var(--color-border);
+}

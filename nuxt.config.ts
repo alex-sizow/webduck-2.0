@@ -25,7 +25,10 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'ru', name: 'Russian', file: 'ru.json' },
       { code: 'fr', name: 'Fracne', file: 'fr.json' }
-    ]
+    ],
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
   modules: ['@pinia/nuxt', '@nuxtjs/i18n']
 })

@@ -1,64 +1,38 @@
-<script setup>
-import { ref, onMounted } from "vue";
+<script setup lang="ts">
 
 // Import all flag images directly
 import frFlag from "@/assets/icons/flags/fr.svg";
 import enFlag from "@/assets/icons/flags/en.svg";
 import ruFlag from "@/assets/icons/flags/ru.svg";
 
-const { locale, setLocale } = useI18n();
-const availableLanguages = ["fr", "en", "ru"];
-const currentLanguage = ref(locale.value);
 
-// Map languages to their flag images
-const flagImages = {
+type Language = "fr" | "en" | "ru";
+
+const i18n = useI18n();
+const availableLanguages: Language[] = ["fr", "en", "ru"];
+const currentLanguage = ref<Language>(i18n.locale.value as Language);
+
+const flagImages: Record<Language, string> = {
   fr: frFlag,
   en: enFlag,
   ru: ruFlag,
 };
 
-// Regions that should use Russian
-const russianRegions = ['RU', 'BY'];
-// Regions that should use French
-const frenchRegions = ['FR'];
-
-const switchLanguage = (lang) => {
+const switchLanguage = (lang: Language): void => {
   if (availableLanguages.includes(lang)) {
     currentLanguage.value = lang;
-    setLocale(lang);
+    i18n.locale.value = lang;
     localStorage.setItem("language", lang);
   }
 };
 
-const detectLanguageByRegion = async () => {
-  try {
-    // Try to get user's country from IP geolocation
-    const response = await fetch('https://ipapi.co/json/');
-    const data = await response.json();
-    const countryCode = data.country_code;
-    
-    // Select language based on country
-    if (russianRegions.includes(countryCode)) {
-      return 'ru';
-    } else if (frenchRegions.includes(countryCode)) {
-      return 'fr';
-    } else {
-      return 'en'; // Default for rest of the world
-    }
-  } catch (error) {
-    console.error('Error detecting region:', error);
-    return 'en'; // Default fallback
-  }
-};
-
 onMounted(() => {
-  // Keep currentLanguage in sync with i18n locale
-  currentLanguage.value = locale.value;
+  currentLanguage.value = i18n.locale.value as Language;
 });
 </script>
 
 <template>
-  <div class="language-switcher" :data-current-language="currentLanguage">
+  <section class="language-switcher" :data-current-language="currentLanguage">
     <button
       v-for="lang in availableLanguages"
       :key="lang"
@@ -69,7 +43,7 @@ onMounted(() => {
       <img :src="flagImages[lang]" :alt="lang" />
     </button>
     <div class="language-switcher__status"></div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
@@ -80,7 +54,7 @@ onMounted(() => {
   gap: 5px;
   border-radius: 24px;
   padding: 2px;
-  border: 1px solid var(--language-switcher-border-color);
+  border: 2px solid var(--language-switcher-border-color);
 
   button {
     border: none;

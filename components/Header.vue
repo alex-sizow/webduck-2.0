@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <header class="header">
     <NuxtLink to="/" class="header__logo">
@@ -10,7 +12,8 @@
       <NuxtLink to="/pomodoro">🍅</NuxtLink>
     </nav>
 
-    <ul>
+    <ul class="header__buttons">
+      <ThemeSwitcherButton />
       <LanguageSwitcherButton />
     </ul>
   </header>
@@ -42,6 +45,11 @@
   .header__links {
     display: flex;
     gap: 20px;
+  }
+
+  .header__buttons {
+    display: flex;
+    gap: 10px;
   }
 }
 </style>
