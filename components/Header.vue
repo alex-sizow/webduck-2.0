@@ -45,6 +45,7 @@
   .header__links {
     display: flex;
     gap: 20px;
+    color: var(--color-text-header);
   }
 
   .header__buttons {

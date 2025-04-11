@@ -4,37 +4,20 @@
   --language-switcher-border-color: white;
   --theme-switcher-back: white;
   --theme-switcher-text: black;
-  
   --color-background: #ffffff;
+  --color-text-header: white;
   --color-text: #333333;
   --color-primary: #4caf50;
   --color-secondary: #2196f3;
   --color-border: #e0e0e0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Системная темная тема */
-    --main-color: green;
-    --language-switcher-border-color: #555;
-    --theme-switcher-back: #333;
-    --theme-switcher-text: white;
-    
-    --color-background: #121212;
-    --color-text: #e0e0e0;
-    --color-primary: #81c784;
-    --color-secondary: #64b5f6;
-    --color-border: #444444;
-  }
-}
-
 [data-theme="light"] {
-  /* Принудительная светлая тема */
   --main-color: green;
   --language-switcher-border-color: white;
   --theme-switcher-back: white;
   --theme-switcher-text: black;
-  
+  --color-text-header: white;
   --color-background: #ffffff;
   --color-text: #333333;
   --color-primary: #4caf50;
@@ -48,10 +31,26 @@
   --language-switcher-border-color: #555;
   --theme-switcher-back: #333;
   --theme-switcher-text: white;
-  
+  --color-text-header: red;
   --color-background: #121212;
   --color-text: #e0e0e0;
   --color-primary: #81c784;
   --color-secondary: #64b5f6;
   --color-border: #444444;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+
+    --main-color: green;
+    --language-switcher-border-color: #555;
+    --theme-switcher-back: #333;
+    --theme-switcher-text: white;
+    --color-text-header: red;
+    --color-background: #121212;
+    --color-text: #e0e0e0;
+    --color-primary: #81c784;
+    --color-secondary: #64b5f6;
+    --color-border: #444444;
+  }
 }
