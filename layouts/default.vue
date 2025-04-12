@@ -2,6 +2,7 @@
   <Header />
   <main><NuxtPage /></main>
   <Footer />
+  <ScrollToTopButton />
 </template>
 
 <style scoped>

@@ -10,7 +10,15 @@ type Language = "fr" | "en" | "ru";
 
 const i18n = useI18n();
 const availableLanguages: Language[] = ["fr", "en", "ru"];
-const currentLanguage = ref<Language>(i18n.locale.value as Language);
+
+// Use computed property to always stay in sync with i18n
+const currentLanguage = computed<Language>({
+  get: () => i18n.locale.value as Language,
+  set: (value) => {
+    i18n.locale.value = value;
+    localStorage.setItem("language", value);
+  }
+});
 
 const flagImages: Record<Language, string> = {
   fr: frFlag,
@@ -21,13 +29,14 @@ const flagImages: Record<Language, string> = {
 const switchLanguage = (lang: Language): void => {
   if (availableLanguages.includes(lang)) {
     currentLanguage.value = lang;
-    i18n.locale.value = lang;
-    localStorage.setItem("language", lang);
   }
 };
 
 onMounted(() => {
-  currentLanguage.value = i18n.locale.value as Language;
+  const savedLanguage = localStorage.getItem("language") as Language;
+  if (savedLanguage && availableLanguages.includes(savedLanguage)) {
+    currentLanguage.value = savedLanguage;
+  }
 });
 </script>
 

@@ -18,13 +18,13 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_locale',
       redirectOn: 'root',
-      alwaysRedirect: true,
+      alwaysRedirect: false,
       fallbackLocale: 'en'
     },
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'ru', name: 'Russian', file: 'ru.json' },
-      { code: 'fr', name: 'Fracne', file: 'fr.json' }
+      { code: 'fr', name: 'French', file: 'fr.json' }
     ],
     bundle: {
       optimizeTranslationDirective: false,
