@@ -19,18 +19,14 @@
   border-radius: 20px;
   img {
     position: relative;
-
     top: 2px;
     width: 100%;
     border-radius: 20px;
     min-height: 100%;
     filter: grayscale(100%);
     transition: all 1s ease !important;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
     transition: filter 0.5s ease-in-out;
-    -webkit-transition: -webkit-filter 0.5s ease-in-out;
-    -moz-transition: -moz-filter 0.5s ease-in-out;
+
   }
 
   .intro__who {

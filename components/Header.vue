@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ThemeSwitcherButton from './Buttons/ThemeSwitcherButton.vue'
+import LanguageSwitcherButton from './Buttons/LanguageSwitcherButton.vue'
+</script>
 
 <template>
   <header class="header">

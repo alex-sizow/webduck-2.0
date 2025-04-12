@@ -27,7 +27,7 @@
 
 [data-theme="dark"] {
   /* Принудительная темная тема */
-  --main-color: green;
+  --main-color: purple;
   --language-switcher-border-color: #555;
   --theme-switcher-back: #333;
   --theme-switcher-text: white;
