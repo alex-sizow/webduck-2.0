@@ -1,3 +1,8 @@
+<script setup lang="ts">
+
+import ScrollToTopButton from '../components/Buttons/ScrollToTopButton.vue'
+</script>
+
 <template>
   <Header />
   <main><NuxtPage /></main>

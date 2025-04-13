@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     lazy: true,
-    defaultLocale: 'en',
+    defaultLocale: 'fr',
     strategy: 'no_prefix',
     detectBrowserLanguage: {
       useCookie: true,
@@ -30,5 +30,13 @@ export default defineNuxtConfig({
       optimizeTranslationDirective: false,
     },
   },
-  modules: ['@pinia/nuxt', '@nuxtjs/i18n']
+  modules: ['@pinia/nuxt', '@nuxtjs/i18n'],
+  // Ensure vite resolves paths correctly
+  vite: {
+    resolve: {
+      alias: {
+        '@': '.'
+      }
+    }
+  }
 })
