@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 
 const props = defineProps<{
   data: Array<{
@@ -8,10 +7,11 @@ const props = defineProps<{
     description: string;
     tags: string[];
   }>;
+  quantity: number;
 }>();
 
 const displayedArticles = computed(() => {
-  return props.data.slice(0, 6);
+  return props.data.slice(0, props.quantity || 1);
 });
 </script>
 

@@ -56,14 +56,14 @@ const mockArticles = [
       France, and technology
     </p>
   </div>
- <ArticleCardList :data="mockArticles" />
+ <ArticleCardList :data="mockArticles" :quantity="6"/>
  
 </template>
 
 <style scoped>
 .intro {
   width: 50%;
-  background: var(  );
+  background: var(--main-color);
   position: relative;
   border-radius: 20px;
   img {
