@@ -5,7 +5,9 @@ import ScrollToTopButton from '../components/Buttons/ScrollToTopButton.vue'
 
 <template>
   <Header />
-  <main><NuxtPage /></main>
+  <main>
+    <NuxtPage />
+  </main>
   <Footer />
   <ScrollToTopButton />
 </template>

@@ -8,7 +8,6 @@ const { $markdown } = useNuxtApp() as unknown as { $markdown: (text: string) => 
 <template>
     <div>
         <h1>About</h1>
-      
         <div class="markdown-content" v-html="$markdown(data|| '')"></div>
     </div>
 </template> 

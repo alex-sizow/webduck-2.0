@@ -1,3 +1,17 @@
 {
-  "welcome": "Bonjour"
+  "welcome": "Bonjour",
+  "error": "Une erreur est survenue",
+  "submit": "Soumettre",
+  "success": "Succès",
+  "cancel": "Annuler",
+  "loading": "Chargement",
+  "save": "Sauvegarder",
+  "delete": "Supprimer",
+  "edit": "Modifier",
+  "view": "Voir",
+  "search": "Rechercher",
+  "help": "Aide",
+  "settings": "Paramètres",
+  "profile": "Profil",
+  "logout": "Déconnexion"
 }

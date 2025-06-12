@@ -1,3 +1,17 @@
 {
-  "welcome": "welcome"
+  "welcome": "Welcome",
+  "error": "An error occurred",
+  "submit": "Submit",
+  "success": "Success",
+  "cancel": "Cancel",
+  "loading": "Loading",
+  "save": "Save",
+  "delete": "Delete",
+  "edit": "Edit",
+  "view": "View",
+  "search": "Search",
+  "help": "Help",
+  "settings": "Settings",
+  "profile": "Profile",
+  "logout": "Logout"
 }
